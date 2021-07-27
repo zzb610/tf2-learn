@@ -6,7 +6,10 @@ network = Sequential([
     layers.Conv2D(6, kernel_size=3),
     layers.MaxPooling2D(2, strides=2),
     layers.ReLU(),
-    layers.Conv2D(16, kernel_size=3),
+    layers.Conv2D(16, kernel_size=3, strides=1),
+
+    layers.BatchNormalization(),
+
     layers.MaxPooling2D(2, strides=2),
     layers.ReLU(),
     layers.Flatten(),
