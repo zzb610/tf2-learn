@@ -43,6 +43,8 @@ train_dataset = train_dataset.batch(512)
 
 test_dataset = tf.data.Dataset.from_tensor_slices((x_val, y_val))
 test_dataset = test_dataset.batch(512)
+sample = next(iter(train_dataset))
+sample[0].shape, sample[1].shape
 # %%
 history = network.fit(train_dataset,epochs=30)
 # %%
